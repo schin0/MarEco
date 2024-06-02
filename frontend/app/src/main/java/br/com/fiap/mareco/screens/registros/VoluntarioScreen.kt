@@ -29,8 +29,6 @@ fun VoluntarioScreen(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
     ) {
-        val contexto = LocalContext.current
-
         TelaInicialComponent()
 
         Column(
