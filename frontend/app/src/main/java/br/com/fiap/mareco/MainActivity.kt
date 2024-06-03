@@ -49,11 +49,11 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable("registro/organizador") {
-                            OrganizadorScreen(navController)
+                            OrganizadorScreen()
                         }
 
                         composable("registro/empresa") {
-                            EmpresaScreen(navController)
+                            EmpresaScreen()
                         }
                     }
                 }
