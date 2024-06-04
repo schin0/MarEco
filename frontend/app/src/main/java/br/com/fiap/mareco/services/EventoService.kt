@@ -1,6 +1,7 @@
 package br.com.fiap.mareco.services
 
 import android.content.Context
+import androidx.navigation.NavController
 import br.com.fiap.mareco.model.CardConfiguracao
 import br.com.fiap.mareco.model.Destaque
 import br.com.fiap.mareco.model.Evento
@@ -13,7 +14,7 @@ fun listarEventos(): List<Evento> {
         Evento(
             1,
             "ILHABELA",
-            "Ajude a monitorar as baleias jubarte em Ilhabela.",
+            "Participe do monitoramento das baleias jubarte em Ilhabela, contribuindo para a preservação e estudos científicos dessas majestosas criaturas.",
             "Praia do Curral, Ilhabela, SP",
             "Em frente ao Quiosque do Zé",
             "Júlio Souza",
@@ -25,7 +26,7 @@ fun listarEventos(): List<Evento> {
         Evento(
             2,
             "PRAIA DO TOMBO",
-            "Monitoramento de Ninhos de Tartarugas.",
+            "Ajude a monitorar ninhos de tartarugas na Praia do Tombo, protegendo ovos e garantindo a chegada segura das tartaruguinhas ao mar.",
             "Praia do Tombo, Guarujá, SP",
             "Em frente ao Posto de Guarda-Vidas",
             "Rosana Pimentel",
@@ -37,7 +38,7 @@ fun listarEventos(): List<Evento> {
     )
 }
 
-fun listarEventosDestaques(contexto: Context): List<Destaque> {
+fun listarEventosDestaques(contexto: Context, navController: NavController): List<Destaque> {
     val eventosSimples = listarEventosSimples()
     var cards = mutableListOf<CardConfiguracao>()
 
@@ -55,13 +56,13 @@ fun listarEventosDestaques(contexto: Context): List<Destaque> {
     return listOf(
         Destaque(
             "Eventos",
-            { mostrarMensagemEmConstrucao(contexto) },
+            { navController.navigate("eventos") },
             cards
         )
     )
 }
 
-private fun listarEventosSimples() :List<EventoDestaque> {
+private fun listarEventosSimples(): List<EventoDestaque> {
     return listOf(
         EventoDestaque(
             1,

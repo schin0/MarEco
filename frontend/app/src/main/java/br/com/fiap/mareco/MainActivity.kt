@@ -11,6 +11,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.fiap.mareco.screens.EventosScreen
 import br.com.fiap.mareco.screens.HomeScreen
 import br.com.fiap.mareco.screens.LoginScreen
 import br.com.fiap.mareco.screens.RegistroScreen
@@ -59,6 +60,10 @@ class MainActivity : ComponentActivity() {
 
                         composable("home") {
                             HomeScreen(navController)
+                        }
+
+                        composable("eventos") {
+                            EventosScreen(navController)
                         }
                     }
                 }
