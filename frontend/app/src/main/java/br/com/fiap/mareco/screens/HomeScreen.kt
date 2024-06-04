@@ -15,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import br.com.fiap.mareco.R
 import br.com.fiap.mareco.components.DestaqueComponent
+import br.com.fiap.mareco.services.listarEventosDestaques
 import br.com.fiap.mareco.services.listarReportes
 
 @Composable
@@ -46,8 +47,22 @@ fun HomeScreen(navController: NavController) {
 
         val listaReporte = listarReportes(contexto)
 
-        listaReporte.forEach {
-            DestaqueComponent(destaque = it)
+        Row(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            listaReporte.forEach {
+                DestaqueComponent(destaque = it)
+            }
+        }
+
+        val listaEvento = listarEventosDestaques(contexto)
+
+        Row(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            listaEvento.forEach {
+                DestaqueComponent(destaque = it)
+            }
         }
 
     }

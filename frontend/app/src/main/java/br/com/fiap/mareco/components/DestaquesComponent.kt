@@ -30,7 +30,7 @@ import br.com.fiap.mareco.model.Destaque
 fun DestaqueComponent(destaque: Destaque) {
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .padding(start = 16.dp, end = 0.dp, bottom = 0.dp, top = 0.dp)
     ) {
         Row(
