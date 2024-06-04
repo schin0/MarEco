@@ -64,6 +64,7 @@ fun HomeScreen(navController: NavController) {
                 DestaqueComponent(destaque = it)
             }
         }
-
     }
+
+    MenuScreen(navController)
 }
