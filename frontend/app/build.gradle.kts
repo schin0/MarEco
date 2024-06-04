@@ -62,7 +62,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
-    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,9 +72,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     val mapsComposeVersion = "4.4.1"
-    implementation("com.google.maps.android:maps-compose:$mapsComposeVersion")
-    implementation("com.google.maps.android:maps-compose-utils:$mapsComposeVersion")
-    implementation("com.google.maps.android:maps-compose-widgets:$mapsComposeVersion")
+    implementation(libs.maps.compose)
+    implementation(libs.maps.compose.utils)
+    implementation(libs.maps.compose.widgets)
 }
 
 secrets {
