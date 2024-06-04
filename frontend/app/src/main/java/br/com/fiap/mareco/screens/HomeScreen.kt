@@ -55,7 +55,7 @@ fun HomeScreen(navController: NavController) {
             }
         }
 
-        val listaEvento = listarEventosDestaques(contexto, navController)
+        val listaEvento = listarEventosDestaques(navController)
 
         Row(
             modifier = Modifier.fillMaxWidth()

@@ -38,7 +38,7 @@ fun listarEventos(): List<Evento> {
     )
 }
 
-fun listarEventosDestaques(contexto: Context, navController: NavController): List<Destaque> {
+fun listarEventosDestaques(navController: NavController): List<Destaque> {
     val eventosSimples = listarEventosSimples()
     var cards = mutableListOf<CardConfiguracao>()
 
