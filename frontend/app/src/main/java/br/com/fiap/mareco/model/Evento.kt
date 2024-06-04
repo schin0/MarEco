@@ -13,5 +13,7 @@ data class Evento(
     val contatoOrganizador: String,
     val instrucaoEspecial: String,
     val data: LocalDate,
-    val hora: LocalTime
+    val hora: LocalTime,
+    val longitude: Double,
+    val latitude: Double
 )

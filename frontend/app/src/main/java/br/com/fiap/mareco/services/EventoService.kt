@@ -1,6 +1,5 @@
 package br.com.fiap.mareco.services
 
-import android.content.Context
 import androidx.navigation.NavController
 import br.com.fiap.mareco.model.CardConfiguracao
 import br.com.fiap.mareco.model.Destaque
@@ -21,7 +20,9 @@ fun listarEventos(): List<Evento> {
             "11978451245",
             "Traga binóculos, caderno para anotações e protetor solar.",
             LocalDate.now(),
-            LocalTime.now()
+            LocalTime.now(),
+            (-23.51296927426321),
+            (-46.69478687364815)
         ),
         Evento(
             2,
@@ -33,7 +34,9 @@ fun listarEventos(): List<Evento> {
             "17998563365",
             "Traga luvas, lanterna vermelha e um caderno para anotações.",
             LocalDate.now(),
-            LocalTime.now()
+            LocalTime.now(),
+            (-23.51296927426321),
+            (-46.69478687364815)
         ),
     )
 }
