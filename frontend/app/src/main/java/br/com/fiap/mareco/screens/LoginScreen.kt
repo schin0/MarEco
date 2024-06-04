@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -154,7 +153,7 @@ fun LoginScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 0.dp, vertical = 10.dp),
                     onClick = {
-                        mostrarMensagemEmConstrucao(contexto)
+                        navController.navigate("home")
                     }
                 )
             }
