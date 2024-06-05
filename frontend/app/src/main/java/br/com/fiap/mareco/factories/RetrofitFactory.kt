@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitFactory {
-    val URL = "http://192.168.2.165:8082/evento/";
+    private val URL = "http://192.168.2.165:8082/evento/";
 
     val retrofitFactory = Retrofit.Builder()
         .baseUrl(URL).addConverterFactory(GsonConverterFactory.create())

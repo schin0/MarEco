@@ -5,13 +5,11 @@ import br.com.fiap.mareco.model.CardConfiguracao
 import br.com.fiap.mareco.model.Destaque
 import br.com.fiap.mareco.model.Evento
 import br.com.fiap.mareco.model.EventoDestaque
-import java.time.LocalDate
-import java.time.LocalTime
 
 fun listarEventos(): List<Evento> {
     return listOf(
         Evento(
-            1,
+            3,
             "oi",
             "Participe do monitoramento das baleias jubarte em Ilhabela, contribuindo para a preservação e estudos científicos dessas majestosas criaturas.",
             "Praia do Curral, Ilhabela, SP",
@@ -21,11 +19,11 @@ fun listarEventos(): List<Evento> {
             "Traga binóculos, caderno para anotações e protetor solar.",
 //            LocalDate.now(),
 //            LocalTime.now(),
-            (-23.51296927426321),
-            (-46.69478687364815)
+            (-24.0143),
+            (-46.273)
         ),
         Evento(
-            2,
+            4,
             "teste",
             "Ajude a monitorar ninhos de tartarugas na Praia do Tombo, protegendo ovos e garantindo a chegada segura das tartaruguinhas ao mar.",
             "Praia do Tombo, Guarujá, SP",
@@ -35,8 +33,8 @@ fun listarEventos(): List<Evento> {
             "Traga luvas, lanterna vermelha e um caderno para anotações.",
 //            LocalDate.now(),
 //            LocalTime.now(),
-            (-23.51296927426321),
-            (-46.69478687364815)
+            (-23.55052),
+            (-46.633308)
         ),
     )
 }
@@ -63,6 +61,10 @@ fun listarEventosDestaques(navController: NavController): List<Destaque> {
             cards
         )
     )
+}
+
+fun obterEventoPorId(eventoId: Int): Evento? {
+    return listarEventos().find { it.id == eventoId }
 }
 
 private fun listarEventosSimples(): List<EventoDestaque> {
