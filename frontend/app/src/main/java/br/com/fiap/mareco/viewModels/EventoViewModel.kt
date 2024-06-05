@@ -1,0 +1,49 @@
+package br.com.fiap.mareco.viewModels
+
+import android.util.Log
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import br.com.fiap.mareco.factories.RetrofitFactory
+import br.com.fiap.mareco.model.Evento
+import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
+class EventoViewModel : ViewModel() {
+    private val _eventos = mutableStateOf<List<Evento>>(emptyList())
+    var eventos: State<List<Evento>> = _eventos
+
+    fun fetchEventos() {
+        viewModelScope.launch {
+            try {
+                val call = RetrofitFactory().eventoService().listarEventos()
+
+                call.enqueue(object : Callback<List<Evento>> {
+                    override fun onResponse(
+                        call: Call<List<Evento>>,
+                        response: Response<List<Evento>>
+                    ) {
+                        if (response.isSuccessful) {
+                            _eventos.value = response.body() ?: emptyList()
+                        } else {
+                            Log.e("Response Error", "Código: ${response.code()}, Mensagem: ${response.message()}")
+                            response.errorBody()?.let { errorBody ->
+                                Log.e("Error Body", errorBody.string())
+                            }
+                        }
+                    }
+
+                    override fun onFailure(call: Call<List<Evento>>, t: Throwable) {
+                        Log.e("Erro1", t.message ?: "Erro desconhecido")
+                    }
+                })
+
+            } catch (e: Exception) {
+                Log.e("Erro1", e.message ?: "Erro desconhecido")
+            }
+        }
+    }
+}

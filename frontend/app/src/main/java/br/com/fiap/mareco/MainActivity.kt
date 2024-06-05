@@ -11,6 +11,9 @@ import androidx.compose.ui.res.colorResource
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.fiap.mareco.screens.DetalhesEventoScreen
+import br.com.fiap.mareco.screens.EventosScreen
+import br.com.fiap.mareco.screens.HomeScreen
 import br.com.fiap.mareco.screens.LoginScreen
 import br.com.fiap.mareco.screens.RegistroScreen
 import br.com.fiap.mareco.screens.registros.EmpresaScreen
@@ -49,11 +52,25 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable("registro/organizador") {
-                            OrganizadorScreen(navController)
+                            OrganizadorScreen()
                         }
 
                         composable("registro/empresa") {
-                            EmpresaScreen(navController)
+                            EmpresaScreen()
+                        }
+
+                        composable("home") {
+                            HomeScreen(navController)
+                        }
+
+                        composable("eventos") {
+                            EventosScreen(navController)
+                        }
+
+                        composable("detalhesEvento/{eventoId}") {
+                            val eventoId = it.arguments?.getString("eventoId")
+                            eventoId?.toInt()
+                                ?.let { it1 -> DetalhesEventoScreen(navController, it1) }
                         }
                     }
                 }
