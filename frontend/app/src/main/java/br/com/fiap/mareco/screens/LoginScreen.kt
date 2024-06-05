@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -52,7 +53,7 @@ fun LoginScreen(navController: NavController) {
                 )
             }
 
-            Row {
+            Row (){
                 OutlinedTextField(
                     value = "",
                     onValueChange = { },
@@ -115,7 +116,7 @@ fun LoginScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 0.dp, vertical = 10.dp),
                     onClick = {
-                        mostrarMensagemEmConstrucao(contexto)
+                        navController.navigate("reporte")
                     }
                 )
             }
@@ -138,7 +139,9 @@ fun LoginScreen(navController: NavController) {
                         },
                     textDecoration = TextDecoration.Underline
                 )
+
             }
         }
     }
 }
+

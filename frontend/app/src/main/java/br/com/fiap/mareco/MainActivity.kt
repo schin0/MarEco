@@ -16,6 +16,8 @@ import br.com.fiap.mareco.screens.RegistroScreen
 import br.com.fiap.mareco.screens.registros.EmpresaScreen
 import br.com.fiap.mareco.screens.registros.OrganizadorScreen
 import br.com.fiap.mareco.screens.registros.VoluntarioScreen
+import br.com.fiap.mareco.screens.reporte.TelaCoralReport
+import br.com.fiap.mareco.screens.reporte.TelaInicialReporte
 import br.com.fiap.mareco.ui.theme.MarEcoTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,14 +49,13 @@ class MainActivity : ComponentActivity() {
                         composable("registro/voluntario") {
                             VoluntarioScreen(navController)
                         }
-
-                        composable("registro/organizador") {
-                            OrganizadorScreen(navController)
+                        composable("reporte"){
+                            TelaInicialReporte(navController)
+                        }
+                        composable("reporte/coral"){
+                            TelaCoralReport(navController)
                         }
 
-                        composable("registro/empresa") {
-                            EmpresaScreen(navController)
-                        }
                     }
                 }
             }
