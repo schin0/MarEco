@@ -1,5 +1,6 @@
 package br.com.fiap.mareco.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,7 +25,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.mareco.R
+import br.com.fiap.mareco.factories.RetrofitFactory
+import br.com.fiap.mareco.model.Evento
 import br.com.fiap.mareco.services.listarEventos
+import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.Callback
 
 @Composable
 fun EventosScreen(navController: NavController) {
@@ -56,7 +63,34 @@ fun EventosScreen(navController: NavController) {
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            val eventos = listarEventos()
+            // TODO: Ajustar cenário para async await e preencher com informações do backend
+            var eventos = listarEventos()
+
+            val call = RetrofitFactory().eventoService().listarEventos()
+
+            call.enqueue(object : Callback<List<Evento>> {
+                override fun onResponse(call: Call<List<Evento>>?, response: Response<List<Evento>>?) {
+                    if (response != null) {
+                        if (response.isSuccessful) {
+                            eventos = response.body()!!
+                            Log.i("Evento", eventos.toString())
+
+                            Log.i("Response Body", Gson().toJson(response.body()))
+                        } else {
+                            Log.e("Response Error", "Código: ${response.code()}, Mensagem: ${response.message()}")
+                            response.errorBody()?.let { errorBody ->
+                                Log.e("Error Body", errorBody.string())
+                            }
+                        }
+                    } else {
+                        Log.e("Response Error", "Resposta nula")
+                    }
+                }
+
+                override fun onFailure(call: Call<List<Evento>>, t: Throwable) {
+                    Log.e("Erro1", t.message ?: "Erro desconhecido")
+                }
+            })
 
             eventos.forEach {
                 Card(

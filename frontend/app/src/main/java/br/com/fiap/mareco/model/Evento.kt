@@ -1,8 +1,5 @@
 package br.com.fiap.mareco.model
 
-import java.time.LocalDate
-import java.time.LocalTime
-
 data class Evento(
     val id: Int,
     val titulo: String,
@@ -12,8 +9,8 @@ data class Evento(
     val nomeOrganizador: String,
     val contatoOrganizador: String,
     val instrucaoEspecial: String,
-    val data: LocalDate,
-    val hora: LocalTime,
+//    val data: LocalDate,
+//    val hora: LocalTime,
     val longitude: Double,
     val latitude: Double
 )
