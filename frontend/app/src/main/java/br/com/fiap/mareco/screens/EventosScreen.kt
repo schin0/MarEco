@@ -1,6 +1,5 @@
 package br.com.fiap.mareco.screens
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -29,14 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import br.com.fiap.mareco.R
-import br.com.fiap.mareco.factories.RetrofitFactory
-import br.com.fiap.mareco.model.Evento
-import br.com.fiap.mareco.services.listarEventos
 import br.com.fiap.mareco.viewModels.EventoViewModel
-import com.google.gson.Gson
-import retrofit2.Call
-import retrofit2.Response
-import retrofit2.Callback
 
 @Composable
 fun EventosScreen(navController: NavController, eventoViewModel: EventoViewModel = viewModel()) {
