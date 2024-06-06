@@ -5,12 +5,11 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitFactoryReporte {
-
-    private val URL = "http://10.0.2.2:8083"
+class RetrofitFactoryLogin {
+    private val URL = "http://10.0.2.2:8080"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.HEADERS
+        level = HttpLoggingInterceptor.Level.BODY
     }
 
     private val okHttpClient = OkHttpClient.Builder().apply {
@@ -23,7 +22,7 @@ class RetrofitFactoryReporte {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun postReportService(): ReporteService {
-        return retrofitFactory.create(ReporteService::class.java)
+    fun postLoginService(): LoginService {
+        return retrofitFactory.create(LoginService::class.java)
     }
 }
