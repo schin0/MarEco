@@ -3,12 +3,11 @@ package br.com.fiap.mareco.services
 import androidx.navigation.NavController
 import br.com.fiap.mareco.model.CardConfiguracao
 import br.com.fiap.mareco.model.Destaque
-import br.com.fiap.mareco.model.Evento
 import br.com.fiap.mareco.model.EventoDestaque
 
 fun listarEventosDestaques(navController: NavController): List<Destaque> {
     val eventosSimples = listarEventosSimples()
-    var cards = mutableListOf<CardConfiguracao>()
+    val cards = mutableListOf<CardConfiguracao>()
 
     eventosSimples.forEach {
         cards.add(
