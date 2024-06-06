@@ -166,7 +166,7 @@ fun LoginScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 0.dp, vertical = 10.dp),
                     onClick = {
-                        var call = RetrofitFactoryLogin()
+                        val call = RetrofitFactoryLogin()
                             .postLoginService()
                             .postLogin(
                                 Login(
@@ -183,7 +183,7 @@ fun LoginScreen(navController: NavController) {
                                 if (response.isSuccessful) {
                                     val responseBody = response.body()
                                     responseBody?.let {
-                                        var resposta = it
+                                        val resposta = it
 
                                         if (resposta) {
                                             navController.navigate("home")

@@ -1,7 +1,6 @@
 package br.com.fiap.mareco.services.interfaces
 
 import br.com.fiap.mareco.model.Login
-import okhttp3.Response
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers

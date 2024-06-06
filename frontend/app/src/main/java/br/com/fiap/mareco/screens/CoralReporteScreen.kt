@@ -52,7 +52,7 @@ fun CoralReporteScreen(navController: NavController) {
 
     var localizacaoState by remember { mutableStateOf("") }
 
-    var contexto = LocalContext.current
+    val contexto = LocalContext.current
 
     Log.d("RequestBody", descricaoState)
     Log.d("RequestBody", tipoDeDanoState)
@@ -159,8 +159,7 @@ fun CoralReporteScreen(navController: NavController) {
             }
 
             Button(onClick = {
-
-                var call = RetrofitFactoryReporte()
+                val call = RetrofitFactoryReporte()
                     .postReportService()
                     .postReporte(
                         Reporte(
