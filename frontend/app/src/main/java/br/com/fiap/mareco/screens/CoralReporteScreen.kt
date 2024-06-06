@@ -50,7 +50,7 @@ import retrofit2.Response
 
 @Composable
 fun CoralReporteScreen(navController: NavController) {
-    val options = listOf("Opção 1", "Opção 2", "Opção 3", "Opção 4")
+    val options = listOf("Coral branqueado", "Coral danificado", "Coral desaparecido", "Novo crescimento de coral", "Doença de coral")
 
     var tipoDeDanoState by remember { mutableStateOf("selecione uma opção") }
 
