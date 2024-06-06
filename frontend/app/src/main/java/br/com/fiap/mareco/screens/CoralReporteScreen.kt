@@ -54,11 +54,9 @@ fun CoralReporteScreen(navController: NavController) {
 
     var contexto = LocalContext.current
 
-
     Log.d("RequestBody", descricaoState)
     Log.d("RequestBody", tipoDeDanoState)
     Log.d("RequestBody", localizacaoState)
-
 
     Column(
         modifier = Modifier
@@ -68,7 +66,7 @@ fun CoralReporteScreen(navController: NavController) {
     ) {
         IconButton(
             onClick = {
-                navController.navigate("reporte")
+                navController.navigate("report")
             },
             modifier = Modifier.padding(bottom = 10.dp)
         ) {
