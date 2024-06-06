@@ -33,6 +33,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import br.com.fiap.mareco.R
 import br.com.fiap.mareco.components.BotaoComGradienteComponent
+import br.com.fiap.mareco.services.formatarDataHora
 import br.com.fiap.mareco.services.mostrarMensagemEmConstrucao
 import br.com.fiap.mareco.viewModels.EventoViewModel
 
@@ -108,7 +109,10 @@ fun DetalhesEventoScreen(
                             modifier = Modifier.padding(end = 8.dp)
                         )
 
-                        Text(text = it.descricaoLocal, fontSize = 20.sp)
+                        val dataHoraOriginal = "${it.data} ${it.hora}"
+                        val dataHoraFormatada = formatarDataHora(dataHoraOriginal)
+
+                        Text(text = dataHoraFormatada, fontSize = 20.sp)
                     }
 
                     Spacer(modifier = Modifier.height(16.dp))
