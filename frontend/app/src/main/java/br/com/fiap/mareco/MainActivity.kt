@@ -17,6 +17,7 @@ import br.com.fiap.mareco.screens.EventosScreen
 import br.com.fiap.mareco.screens.HomeScreen
 import br.com.fiap.mareco.screens.LoginScreen
 import br.com.fiap.mareco.screens.RegistroScreen
+import br.com.fiap.mareco.screens.RelatorioScreen
 import br.com.fiap.mareco.screens.ReporteInicialScreen
 import br.com.fiap.mareco.screens.registros.VoluntarioScreen
 import br.com.fiap.mareco.ui.theme.MarEcoTheme
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = "reportar",
+                        startDestination = "login",
                         modifier = Modifier
                             .background(colorResource(id = R.color.branco))
                     ) {
@@ -71,6 +72,10 @@ class MainActivity : ComponentActivity() {
                             val eventoId = it.arguments?.getString("eventoId")
                             eventoId?.toInt()
                                 ?.let { it1 -> DetalhesEventoScreen(navController, it1.toLong()) }
+                        }
+
+                        composable("relatorios") {
+                            RelatorioScreen(navController)
                         }
                     }
                 }

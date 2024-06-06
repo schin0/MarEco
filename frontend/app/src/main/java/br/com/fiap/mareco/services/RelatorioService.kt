@@ -5,45 +5,38 @@ import androidx.navigation.NavController
 import br.com.fiap.mareco.model.CardConfiguracao
 import br.com.fiap.mareco.model.Destaque
 
-fun listarReportes(navController: NavController, contexto: Context): List<Destaque> {
+fun listarRelatorios(navController: NavController, contexto: Context): List<Destaque> {
     return listOf(
         Destaque(
-            "Reporte",
-            { mostrarMensagemEmConstrucao(contexto) },
+            "Relatórios",
+            { navController.navigate("relatorios") },
             cards = listOf(
                 CardConfiguracao(
                     120f,
                     165f,
-                    "CORAIS",
-                    "Corais danificados",
-                    { navController.navigate("reportar/coral") }
-                ),
-                CardConfiguracao(
-                    120f,
-                    165f,
-                    "ÓLEO",
-                    "Vazamento de óleo",
+                    "ACIDENTES AMBIETAIS",
+                    "",
                     { mostrarMensagemEmConstrucao(contexto) }
                 ),
                 CardConfiguracao(
                     120f,
                     165f,
-                    "ESGOTO",
-                    "Vazamento de esgoto",
+                    "ESTADO DOS CORAIS",
+                    "",
                     { mostrarMensagemEmConstrucao(contexto) }
                 ),
                 CardConfiguracao(
                     120f,
                     165f,
-                    "ESPÉCIES",
-                    "Desaparecimento de espécies",
+                    "RELATO SOBRE ESPÉCIES",
+                    "",
                     { mostrarMensagemEmConstrucao(contexto) }
                 ),
                 CardConfiguracao(
                     120f,
                     165f,
-                    "RESÍDUOS",
-                    "Descarte de resíduos",
+                    "INSCRIÇÃO EM MULTIRÕES",
+                    "",
                     { mostrarMensagemEmConstrucao(contexto) }
                 )
             )
