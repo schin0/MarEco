@@ -63,7 +63,7 @@ fun EventosScreen(navController: NavController, eventoViewModel: EventoViewModel
             val eventos by eventoViewModel.eventos
 
             LaunchedEffect(Unit) {
-                eventoViewModel.fetchEventos()
+                eventoViewModel.listarEventos()
             }
 
             if (eventos.isNotEmpty()) {
@@ -126,5 +126,5 @@ fun EventosScreen(navController: NavController, eventoViewModel: EventoViewModel
 
     }
 
-    MenuScreen(navController)
+    MenuScreen(navController, "EVENTOS")
 }

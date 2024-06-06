@@ -15,9 +15,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import br.com.fiap.mareco.components.BotaoMenuComponente
 import br.com.fiap.mareco.R
+import br.com.fiap.mareco.model.MenuItem
 
 @Composable
-fun MenuScreen(navController: NavController) {
+fun MenuScreen(navController: NavController, itemSelecionado: String) {
     Box(
         modifier = Modifier
             .fillMaxSize(),
@@ -27,17 +28,32 @@ fun MenuScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = colorResource(id = R.color.azul_agua))
-                .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 32.dp),
+                .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 25.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             val botoesMenu = listOf(
-                "HOME",
-                "EVENTOS",
-                "REPORT"
+                MenuItem(
+                    "HOME",
+                    R.drawable.baseline_home_24_gray,
+                    R.drawable.baseline_home_24,
+                    "Home"
+                ),
+                MenuItem(
+                    "EVENTOS",
+                    R.drawable.baseline_calendar_today_24_gray,
+                    R.drawable.baseline_calendar_today_24,
+                    "Eventos"
+                ),
+                MenuItem(
+                    "REPORT",
+                    R.drawable.baseline_report_gmailerrorred_24_gray,
+                    R.drawable.baseline_report_gmailerrorred_24,
+                    "Report"
+                )
             )
 
-            botoesMenu.forEach {
-                BotaoMenuComponente(it, navController)
+            botoesMenu.forEach {item ->
+                BotaoMenuComponente(item, item.nome == itemSelecionado, navController)
             }
         }
 

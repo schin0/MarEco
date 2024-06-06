@@ -16,7 +16,7 @@ class EventoViewModel : ViewModel() {
     private val _eventos = mutableStateOf<List<Evento>>(emptyList())
     var eventos: State<List<Evento>> = _eventos
 
-    fun fetchEventos() {
+    fun listarEventos() {
         viewModelScope.launch {
             try {
                 val call = RetrofitFactory().eventoService().listarEventos()
@@ -37,6 +37,40 @@ class EventoViewModel : ViewModel() {
                     }
 
                     override fun onFailure(call: Call<List<Evento>>, t: Throwable) {
+                        Log.e("Erro1", t.message ?: "Erro desconhecido")
+                    }
+                })
+
+            } catch (e: Exception) {
+                Log.e("Erro1", e.message ?: "Erro desconhecido")
+            }
+        }
+    }
+
+    private val _eventoUnico = mutableStateOf<Evento?>(null)
+    var eventoUnico: State<Evento?> = _eventoUnico
+
+    fun obterEventoPorId(id: Long) {
+        viewModelScope.launch {
+            try {
+                val call = RetrofitFactory().eventoService().obterPorId(id)
+
+                call.enqueue(object : Callback<Evento> {
+                    override fun onResponse(
+                        call: Call<Evento>,
+                        response: Response<Evento>
+                    ) {
+                        if (response.isSuccessful) {
+                            _eventoUnico.value = response.body()
+                        } else {
+                            Log.e("Response Error", "Código: ${response.code()}, Mensagem: ${response.message()}")
+                            response.errorBody()?.let { errorBody ->
+                                Log.e("Error Body", errorBody.string())
+                            }
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Evento>, t: Throwable) {
                         Log.e("Erro1", t.message ?: "Erro desconhecido")
                     }
                 })

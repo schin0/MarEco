@@ -9,8 +9,8 @@ data class Evento(
     val nomeOrganizador: String,
     val contatoOrganizador: String,
     val instrucaoEspecial: String,
-//    val data: LocalDate,
-//    val hora: LocalTime,
+    val data: String,
+    val hora: String,
     val longitude: Double,
     val latitude: Double
 )

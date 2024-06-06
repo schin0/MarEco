@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
                         composable("detalhesEvento/{eventoId}") {
                             val eventoId = it.arguments?.getString("eventoId")
                             eventoId?.toInt()
-                                ?.let { it1 -> DetalhesEventoScreen(navController, it1) }
+                                ?.let { it1 -> DetalhesEventoScreen(navController, it1.toLong()) }
                         }
                     }
                 }
