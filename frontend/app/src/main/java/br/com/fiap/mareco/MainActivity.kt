@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = "report",
+                        startDestination = "reportar",
                         modifier = Modifier
                             .background(colorResource(id = R.color.branco))
                     ) {
@@ -51,11 +51,11 @@ class MainActivity : ComponentActivity() {
                             VoluntarioScreen(navController)
                         }
 
-                        composable("report") {
+                        composable("reportar") {
                             ReporteInicialScreen(navController)
                         }
 
-                        composable("report/coral") {
+                        composable("reportar/coral") {
                             CoralReporteScreen(navController)
                         }
 

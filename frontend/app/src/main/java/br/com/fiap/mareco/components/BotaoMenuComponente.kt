@@ -36,7 +36,7 @@ fun BotaoMenuComponente(item: MenuItem, selecionado: Boolean, navController: Nav
 
             Text(
                 text = item.nome,
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 color = if (selecionado) Color.Black else colorResource(
                     id = R.color.cinza
                 ),

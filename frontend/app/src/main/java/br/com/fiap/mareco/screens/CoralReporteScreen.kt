@@ -3,14 +3,12 @@ package br.com.fiap.mareco.screens
 import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -75,7 +73,7 @@ fun CoralReporteScreen(navController: NavController) {
 
     ) {
         Button(
-            onClick = { navController.navigate("report") },
+            onClick = { navController.navigate("reportar") },
             modifier = Modifier
                 .padding(top = 16.dp, start = 0.dp)
                 .width(65.dp)
@@ -208,10 +206,8 @@ fun CoralReporteScreen(navController: NavController) {
             }, modifier = Modifier.fillMaxWidth()) {
                 Text(text = "Enviar", fontSize = 18.sp)
             }
-
         }
-
     }
 
-    MenuScreen(navController, itemSelecionado = "REPORT")
+    MenuScreen(navController, itemSelecionado = "REPORTAR")
 }

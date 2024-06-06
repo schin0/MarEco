@@ -91,7 +91,7 @@ fun ReporteInicialScreen(navController: NavController) {
                         .padding(horizontal = 25.dp)
                         .padding(vertical = 5.dp),
                     onClick = {
-                        navController.navigate("report/coral")
+                        navController.navigate("reportar/coral")
                     },
                     colors = ButtonDefaults.buttonColors(
                         contentColor = Color.Black,
@@ -192,5 +192,4 @@ fun ReporteInicialScreen(navController: NavController) {
     }
 
     MenuScreen(navController, itemSelecionado = "REPORT")
-
 }

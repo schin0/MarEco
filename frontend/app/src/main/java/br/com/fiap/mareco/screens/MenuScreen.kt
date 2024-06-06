@@ -45,10 +45,10 @@ fun MenuScreen(navController: NavController, itemSelecionado: String) {
                     "Eventos"
                 ),
                 MenuItem(
-                    "REPORT",
+                    "REPORTAR",
                     R.drawable.baseline_report_gmailerrorred_24_gray,
                     R.drawable.baseline_report_gmailerrorred_24,
-                    "Report"
+                    "Reportar"
                 )
             )
 

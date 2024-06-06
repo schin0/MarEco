@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,16 +28,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.mareco.components.BotaoComGradienteComponent
 import br.com.fiap.mareco.components.TelaInicialComponent
 import br.com.fiap.mareco.factories.RetrofitFactoryRegistro
-import br.com.fiap.mareco.factories.RetrofitFactoryReporte
 import br.com.fiap.mareco.model.Registro
-import br.com.fiap.mareco.model.Reporte
 import br.com.fiap.mareco.util.enum.TipoUsuario
 import retrofit2.Call
 import retrofit2.Callback
