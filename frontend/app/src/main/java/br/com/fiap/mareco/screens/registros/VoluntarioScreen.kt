@@ -26,6 +26,7 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
@@ -108,6 +109,7 @@ fun VoluntarioScreen(navController: NavController) {
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
                     ),
+                    textStyle = TextStyle(color = Color.Black)
                 )
             }
 
@@ -140,6 +142,7 @@ fun VoluntarioScreen(navController: NavController) {
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
                     ),
+                    textStyle = TextStyle(color = Color.Black)
                 )
             }
 
@@ -172,6 +175,7 @@ fun VoluntarioScreen(navController: NavController) {
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
                     ),
+                    textStyle = TextStyle(color = Color.Black)
                 )
             }
 
@@ -204,6 +208,7 @@ fun VoluntarioScreen(navController: NavController) {
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
                     ),
+                    textStyle = TextStyle(color = Color.Black)
                 )
             }
 

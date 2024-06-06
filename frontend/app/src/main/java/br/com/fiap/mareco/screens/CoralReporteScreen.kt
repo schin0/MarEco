@@ -2,15 +2,21 @@ package br.com.fiap.mareco.screens
 
 import android.util.Log
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
@@ -26,9 +32,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -62,24 +71,24 @@ fun CoralReporteScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 20.dp)
+            .padding(horizontal = 32.dp)
 
     ) {
-        IconButton(
-            onClick = {
-                navController.navigate("report")
-            },
-            modifier = Modifier.padding(bottom = 10.dp)
+        Button(
+            onClick = { navController.navigate("report") },
+            modifier = Modifier
+                .padding(top = 16.dp, start = 0.dp)
+                .width(65.dp)
+                .shadow(5.dp, CircleShape),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.White),
         ) {
-            Icon(
-                modifier = Modifier
-                    .size(30.dp)
-                    .background(Color.Black),
-                tint = Color.White,
+            Image(
                 painter = painterResource(id = R.drawable.baseline_arrow_back_24),
-                contentDescription = "icon"
+                contentDescription = "Seta voltar"
             )
         }
+        
+        Spacer(modifier = Modifier.height(16.dp))
 
         Text(
             modifier = Modifier
@@ -93,7 +102,7 @@ fun CoralReporteScreen(navController: NavController) {
 
         Text(
             text = "Ajude a preservar os corais reportando qualquer dano ou problema observado.",
-            fontSize = 16.sp
+            fontSize = 20.sp
         )
         Column(
             modifier = Modifier
@@ -149,10 +158,11 @@ fun CoralReporteScreen(navController: NavController) {
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
                         unfocusedTextColor = Color.Black,
-                        unfocusedBorderColor = Color.White,
+                        unfocusedBorderColor = colorResource(id = R.color.verde),
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
-                    )
+                    ),
+                    textStyle = TextStyle(color = Color.Black)
                 )
             }
             Column {
@@ -164,10 +174,11 @@ fun CoralReporteScreen(navController: NavController) {
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
                         unfocusedTextColor = Color.Black,
-                        unfocusedBorderColor = Color.White,
+                        unfocusedBorderColor = colorResource(id = R.color.verde),
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
-                    )
+                    ),
+                    textStyle = TextStyle(color = Color.Black)
                 )
             }
 
@@ -202,4 +213,5 @@ fun CoralReporteScreen(navController: NavController) {
 
     }
 
+    MenuScreen(navController, itemSelecionado = "REPORT")
 }

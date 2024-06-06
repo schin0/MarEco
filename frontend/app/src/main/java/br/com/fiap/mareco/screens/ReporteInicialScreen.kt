@@ -16,6 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -23,9 +25,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.mareco.R
+import br.com.fiap.mareco.services.mostrarMensagemEmConstrucao
 
 @Composable
 fun ReporteInicialScreen(navController: NavController) {
+    val contexto = LocalContext.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -89,7 +94,8 @@ fun ReporteInicialScreen(navController: NavController) {
                         navController.navigate("report/coral")
                     },
                     colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White
+                        contentColor = Color.Black,
+                        containerColor = colorResource(id = R.color.verde)
                     )
                 ) {
                     Text(
@@ -101,9 +107,12 @@ fun ReporteInicialScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 25.dp)
                         .padding(vertical = 5.dp),
-                    onClick = {},
+                    onClick = {
+                          mostrarMensagemEmConstrucao(contexto)
+                    },
                     colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White
+                        contentColor = Color.Black,
+                        containerColor = colorResource(id = R.color.verde)
                     )
                 ) {
                     Text(
@@ -115,9 +124,12 @@ fun ReporteInicialScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 25.dp)
                         .padding(vertical = 5.dp),
-                    onClick = {},
+                    onClick = {
+                        mostrarMensagemEmConstrucao(contexto)
+                    },
                     colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White
+                        contentColor = Color.Black,
+                        containerColor = colorResource(id = R.color.verde)
                     )
                 ) {
                     Text(
@@ -129,9 +141,12 @@ fun ReporteInicialScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 25.dp)
                         .padding(vertical = 5.dp),
-                    onClick = {},
+                    onClick = {
+                        mostrarMensagemEmConstrucao(contexto)
+                    },
                     colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White
+                        contentColor = Color.Black,
+                        containerColor = colorResource(id = R.color.verde)
                     )
                 ) {
                     Text(
@@ -143,9 +158,12 @@ fun ReporteInicialScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 25.dp)
                         .padding(vertical = 5.dp),
-                    onClick = {},
+                    onClick = {
+                        mostrarMensagemEmConstrucao(contexto)
+                    },
                     colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White
+                        contentColor = Color.Black,
+                        containerColor = colorResource(id = R.color.verde)
                     )
                 ) {
                     Text(
@@ -157,9 +175,12 @@ fun ReporteInicialScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 25.dp)
                         .padding(vertical = 5.dp),
-                    onClick = {},
+                    onClick = {
+                        mostrarMensagemEmConstrucao(contexto)
+                    },
                     colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White
+                        contentColor = Color.Black,
+                        containerColor = colorResource(id = R.color.verde)
                     )
                 ) {
                     Text(
@@ -169,5 +190,7 @@ fun ReporteInicialScreen(navController: NavController) {
             }
         }
     }
+
+    MenuScreen(navController, itemSelecionado = "REPORT")
 
 }

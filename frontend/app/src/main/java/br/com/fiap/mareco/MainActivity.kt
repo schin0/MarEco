@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = "login",
+                        startDestination = "report",
                         modifier = Modifier
                             .background(colorResource(id = R.color.branco))
                     ) {
