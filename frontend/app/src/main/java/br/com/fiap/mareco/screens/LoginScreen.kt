@@ -95,7 +95,7 @@ fun LoginScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(0.dp),
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedTextColor = Color.White,
+                        unfocusedTextColor = Color.Black,
                         unfocusedBorderColor = Color.White,
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White
@@ -129,7 +129,7 @@ fun LoginScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(0.dp),
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedTextColor = Color.White,
+                        unfocusedTextColor = Color.Black,
                         unfocusedBorderColor = Color.White,
                         unfocusedLabelColor = Color.White,
                         unfocusedLeadingIconColor = Color.White

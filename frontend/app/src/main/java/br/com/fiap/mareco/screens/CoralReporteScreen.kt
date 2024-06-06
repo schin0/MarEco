@@ -16,6 +16,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -145,7 +146,13 @@ fun CoralReporteScreen(navController: NavController) {
                 OutlinedTextField(
                     value = descricaoState,
                     onValueChange = { descricaoState = it },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        unfocusedTextColor = Color.Black,
+                        unfocusedBorderColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        unfocusedLeadingIconColor = Color.White
+                    )
                 )
             }
             Column {
@@ -154,7 +161,13 @@ fun CoralReporteScreen(navController: NavController) {
                 OutlinedTextField(
                     value = localizacaoState,
                     onValueChange = { localizacaoState = it },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        unfocusedTextColor = Color.Black,
+                        unfocusedBorderColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        unfocusedLeadingIconColor = Color.White
+                    )
                 )
             }
 
