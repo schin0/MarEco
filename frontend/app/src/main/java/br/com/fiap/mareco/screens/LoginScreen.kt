@@ -1,5 +1,7 @@
 package br.com.fiap.mareco.screens
 
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,6 +15,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
@@ -27,7 +33,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.mareco.components.BotaoComGradienteComponent
 import br.com.fiap.mareco.components.TelaInicialComponent
+import br.com.fiap.mareco.factories.RetrofitFactoryLogin
+import br.com.fiap.mareco.model.Login
 import br.com.fiap.mareco.services.mostrarMensagemEmConstrucao
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 @Composable
 fun LoginScreen(navController: NavController) {
@@ -36,6 +47,8 @@ fun LoginScreen(navController: NavController) {
             .fillMaxSize()
     ) {
         val contexto = LocalContext.current
+        var senhaState by remember { mutableStateOf("") }
+        var emailState by remember { mutableStateOf("") }
 
         TelaInicialComponent()
 
@@ -55,7 +68,7 @@ fun LoginScreen(navController: NavController) {
                     fontWeight = FontWeight.Bold
                 )
             }
-            
+
             Spacer(modifier = Modifier.height(32.dp))
 
             Row(
@@ -73,8 +86,8 @@ fun LoginScreen(navController: NavController) {
                     }
             ) {
                 OutlinedTextField(
-                    value = "",
-                    onValueChange = { },
+                    value = emailState,
+                    onValueChange = { emailState = it },
                     placeholder = {
                         Text(text = "Digite seu email", color = Color.Black, fontSize = 20.sp)
                     },
@@ -107,8 +120,8 @@ fun LoginScreen(navController: NavController) {
                     }
             ) {
                 OutlinedTextField(
-                    value = "",
-                    onValueChange = { },
+                    value = senhaState,
+                    onValueChange = { senhaState = it },
                     placeholder = {
                         Text(text = "Digite sua senha", color = Color.Black, fontSize = 18.sp)
                     },
@@ -153,7 +166,44 @@ fun LoginScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(horizontal = 0.dp, vertical = 10.dp),
                     onClick = {
-                        navController.navigate("home")
+                        val call = RetrofitFactoryLogin()
+                            .postLoginService()
+                            .postLogin(
+                                Login(
+                                    email = emailState,
+                                    senha = senhaState
+                                )
+                            )
+
+                        call.enqueue(object : Callback<Boolean> {
+                            override fun onResponse(
+                                call: Call<Boolean>,
+                                response: Response<Boolean>
+                            ) {
+                                if (response.isSuccessful) {
+                                    val responseBody = response.body()
+                                    responseBody?.let {
+                                        val resposta = it
+
+                                        if (resposta) {
+                                            navController.navigate("home")
+                                        } else {
+                                            Toast.makeText(
+                                                contexto,
+                                                "Email ou senha Inválidos!",
+                                                Toast.LENGTH_LONG
+                                            ).show()
+                                        }
+                                    }
+                                } else {
+                                    println("Response error: ${response.errorBody()}")
+                                }
+                            }
+
+                            override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                                Log.i("fiap", "${t.message}")
+                            }
+                        })
                     }
                 )
             }

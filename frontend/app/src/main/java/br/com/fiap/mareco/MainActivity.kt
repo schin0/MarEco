@@ -11,13 +11,13 @@ import androidx.compose.ui.res.colorResource
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.fiap.mareco.screens.CoralReporteScreen
 import br.com.fiap.mareco.screens.DetalhesEventoScreen
 import br.com.fiap.mareco.screens.EventosScreen
 import br.com.fiap.mareco.screens.HomeScreen
 import br.com.fiap.mareco.screens.LoginScreen
 import br.com.fiap.mareco.screens.RegistroScreen
-import br.com.fiap.mareco.screens.registros.EmpresaScreen
-import br.com.fiap.mareco.screens.registros.OrganizadorScreen
+import br.com.fiap.mareco.screens.ReporteInicialScreen
 import br.com.fiap.mareco.screens.registros.VoluntarioScreen
 import br.com.fiap.mareco.ui.theme.MarEcoTheme
 
@@ -51,12 +51,12 @@ class MainActivity : ComponentActivity() {
                             VoluntarioScreen(navController)
                         }
 
-                        composable("registro/organizador") {
-                            OrganizadorScreen()
+                        composable("report") {
+                            ReporteInicialScreen(navController)
                         }
 
-                        composable("registro/empresa") {
-                            EmpresaScreen()
+                        composable("report/coral") {
+                            CoralReporteScreen(navController)
                         }
 
                         composable("home") {
