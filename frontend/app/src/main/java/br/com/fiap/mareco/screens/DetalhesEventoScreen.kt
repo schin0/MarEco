@@ -55,7 +55,7 @@ fun DetalhesEventoScreen(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(250.dp)
+                .height(225.dp)
         ) {
             Box(
                 modifier = Modifier.fillMaxSize()
@@ -95,7 +95,7 @@ fun DetalhesEventoScreen(
                 ) {
                     Text(text = it.titulo, fontSize = 25.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = it.descricao, fontSize = 20.sp)
+                    Text(text = it.descricao, fontSize = 18.sp)
 
                     Spacer(modifier = Modifier.height(32.dp))
 
@@ -127,20 +127,20 @@ fun DetalhesEventoScreen(
                             modifier = Modifier.padding(end = 8.dp)
                         )
 
-                        Text(text = it.descricaoLocal, fontSize = 20.sp)
+                        Text(text = it.descricaoLocal, fontSize = 18.sp)
                     }
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(32.dp))
 
-                    Text(text = "Ponto de encontro:", fontSize = 17.sp)
+                    Text(text = "Ponto de encontro:", fontSize = 16.sp)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = it.pontoDeEncontro, fontSize = 20.sp)
+                    Text(text = it.pontoDeEncontro, fontSize = 18.sp)
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(32.dp))
 
-                    Text(text = "Organizador:", fontSize = 17.sp)
+                    Text(text = "Organizador:", fontSize = 16.sp)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = "Nome: ${it.nomeOrganizador}", fontSize = 20.sp)
+                    Text(text = "Nome: ${it.nomeOrganizador}", fontSize = 18.sp)
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(text = "Contato: ${it.contatoOrganizador}", fontSize = 20.sp)
 
@@ -178,6 +178,6 @@ fun DetalhesEventoScreen(
         }
     }
 
-    MenuScreen(navController)
+    MenuScreen(navController, "EVENTOS")
 
 }

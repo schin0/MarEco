@@ -29,7 +29,7 @@ fun MapaScreen(evento: Evento) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(250.dp),
+            .height(225.dp),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {

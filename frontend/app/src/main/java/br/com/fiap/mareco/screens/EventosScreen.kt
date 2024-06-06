@@ -126,5 +126,5 @@ fun EventosScreen(navController: NavController, eventoViewModel: EventoViewModel
 
     }
 
-    MenuScreen(navController)
+    MenuScreen(navController, "EVENTOS")
 }
