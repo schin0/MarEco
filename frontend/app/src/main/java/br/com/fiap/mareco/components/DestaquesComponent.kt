@@ -68,7 +68,12 @@ fun DestaqueComponent(destaque: Destaque) {
                     modifier = Modifier
                         .padding(8.dp)
                         .height(configuracao.altura.dp)
-                        .width(configuracao.largura.dp),
+                        .width(configuracao.largura.dp)
+                        .clickable {
+                            if (configuracao.onClick != { }) {
+                                configuracao.onClick()
+                            }
+                        },
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.verde),
                         contentColor = Color.Black,
