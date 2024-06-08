@@ -59,7 +59,7 @@ private const val BASE_URL = "http://SEU_IP_AQUI:8081/"
 ## 🔗 Links importantes
 
 - 🎨[Figma](https://www.figma.com/proto/MSMqsGqgm5sksNu1j3WS8y/MarEco---Global-Solution?node-id=60-1043&t=HCpmZm88VMKHbVUe-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=51%3A1129)
-- 📈 [Vídeo Pitch]()
+- 📈 [Vídeo Pitch](https://youtu.be/GwD_7vRkqOA?si=vdyRGZ6VRjG7nW6j)
 - 💻 [Vídeo técnico](https://youtu.be/DokwIp-LZLA?si=S9-Gx5ot4a94wrAP)
 - 📋 [Diagrama BPMN da solução](https://drive.google.com/file/d/1p7dJXqmuhJj1QGKauRZJbyewQTlSR9fb/view?usp=sharing)
 - 📃 [Documentação completa do projeto](https://docs.google.com/document/d/1brf8BWoDI9XvdqF5tXGKm4oIctjsfJybFNhrB7ldSqg/edit?usp=sharing)
