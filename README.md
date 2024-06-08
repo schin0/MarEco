@@ -62,6 +62,7 @@ private const val BASE_URL = "http://SEU_IP_AQUI:8081/"
 - 📈 [Vídeo Pitch]()
 - 💻 [Vídeo técnico](https://youtu.be/DokwIp-LZLA?si=S9-Gx5ot4a94wrAP)
 - 📋 [Diagrama BPMN da solução](https://drive.google.com/file/d/1p7dJXqmuhJj1QGKauRZJbyewQTlSR9fb/view?usp=sharing)
+- 📃 [Documentação completa do projeto](https://docs.google.com/document/d/1brf8BWoDI9XvdqF5tXGKm4oIctjsfJybFNhrB7ldSqg/edit?usp=sharing)
 
 ## 📞 Participantes
 - [Alex Coelho de Oliveira](https://www.linkedin.com/in/alex-coelho-de-oliveira/)
